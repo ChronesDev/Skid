@@ -1,0 +1,6 @@
+[submodule "Skid/Lib/Horion"]
+	path = Skid/Lib/Horion
+	url = https://github.com/horionclient/horion.git
+[submodule "Skid/Lib/Index2"]
+	path = Skid/Lib/Index2
+	url = https://github.com/ChronesDev/Index2.git
