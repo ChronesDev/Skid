@@ -116,12 +116,16 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 DWORD WINAPI DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID)
 {
-	switch (ul_reason_for_call) {
-		case DLL_PROCESS_ATTACH: {
-			CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)Start, hModule, NULL, NULL);
+	switch (ul_reason_for_call)
+	{
+		case DLL_PROCESS_ATTACH:
+		{
+			CreateThread(0, NULL, (LPTHREAD_START_ROUTINE)Start, hModule, NULL, 0);
 			DisableThreadLibraryCalls(hModule);
-		} break;
+			break;
+		}
 		case DLL_PROCESS_DETACH:
+		{
 			isRunning = false;
 
 			scriptMgr.unloadAllScripts();
@@ -144,6 +148,7 @@ DWORD WINAPI DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID)
 					guiData->displayClientMessageF("%sEjected!", RED);
 			}
 			break;
+		}
 	}
 	return TRUE;
 }
