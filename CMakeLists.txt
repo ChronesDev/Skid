@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(Skid)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_GENERATOR_PLATFORM x64)
 
 # Remove Windows.h shit
 add_compile_definitions(WIN32_LEAN_AND_MEAN)

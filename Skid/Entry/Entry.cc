@@ -1,7 +1,9 @@
 #include <index>
 #include <lib.horion.h>
 
-void main()
+void Test()
 {
-	
+	using namespace Index;
+
+
 }
