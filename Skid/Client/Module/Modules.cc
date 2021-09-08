@@ -15,10 +15,10 @@ namespace Skid
 		ModuleManager* Manager_;
 
 	public:
-		fun Init(Nullable<ModuleManager&> modManager)
+		fun Init(Nullable<ModuleManager*> modManager)
 		{
 			var m = modManager.ValueOr(moduleMgr);
-			Manager_ = &m;
+			Manager_ = m;
 		}
 
 		fun TryAddModule(IPtr<IModule> m)
