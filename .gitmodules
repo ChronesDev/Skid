@@ -4,3 +4,6 @@
 [submodule "Skid/Lib/Index2"]
 	path = Skid/Lib/Index2
 	url = https://github.com/ChronesDev/Index2.git
+[submodule "Skid/Lib/MinHook"]
+	path = Skid/Lib/MinHook
+	url = https://github.com/TsudaKageyu/minhook

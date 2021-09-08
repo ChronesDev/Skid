@@ -61,10 +61,17 @@ DWORD WINAPI KeyThread(LPVOID lpParam)
 
 DWORD WINAPI Start(LPVOID lpParam)
 {
+	// Crash Test
+	// *(int*)nullptr = 10;
+
 	logF("Starting up...");
 	logF("MSC v%i at %s", _MSC_VER, __TIMESTAMP__);
 
+	Sleep(10);
+
 	init();
+
+	Sleep(10);
 
 	DWORD procId = GetCurrentProcessId();
 	if (!mem.Open(procId, SlimUtils::ProcessAccess::Full)) {
@@ -77,11 +84,15 @@ DWORD WINAPI Start(LPVOID lpParam)
 	GameData::initGameData(gameModule, &mem, (HMODULE)lpParam);
 	Target::init(g_Data.getPtrLocalPlayer());
 
+	Sleep(10);
+
 	Hooks::Init();
 
 	DWORD keyThreadId;
 	CreateThread(nullptr, NULL, (LPTHREAD_START_ROUTINE)KeyThread, lpParam, NULL, &keyThreadId);  // Checking Keypresses
 	logF("KeyT: %i", keyThreadId);
+
+	Sleep(10);
 
 	cmdMgr->initCommands();
 	logF("Initialized command manager (1/3)");
@@ -89,6 +100,8 @@ DWORD WINAPI Start(LPVOID lpParam)
 	logF("Initialized module manager (2/3)");
 	configMgr->init();
 	logF("Initialized config manager (3/3)");
+
+	Sleep(10);
 
 	Hooks::Enable();
 	TabGui::init();
