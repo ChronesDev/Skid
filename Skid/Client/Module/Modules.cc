@@ -21,16 +21,20 @@ namespace Skid
 			Manager_ = m;
 		}
 
-		fun TryAddModule(IPtr<IModule> m)
+		fun ForceAddModule(IPtr<IModule> m)
 		{
-			if (!Manager_) throw ".";
+			if (!Manager_) throw std::exception(".");
 
-
+			var lock = Manager_->lockModuleList();
+			var list = *Manager_->getModuleList();
+			list.push_back(m);
 		}
 
 		fun AddDefaultModules()
 		{
-			if (!Manager_) throw ".";
+			if (!Manager_) throw std::exception(".");
+
+			ForceAddModule(INew<Module::UITestModule>().As<IModule>());
 		}
 	}
 	Modules;

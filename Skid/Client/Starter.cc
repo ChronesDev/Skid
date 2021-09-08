@@ -14,6 +14,7 @@ namespace Skid
 	global fun Start()
 	{
 		Modules.Init(Null);
+		Modules.AddDefaultModules();
 	}
 }
 
