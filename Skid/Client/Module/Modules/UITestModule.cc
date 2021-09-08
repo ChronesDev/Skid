@@ -1,5 +1,4 @@
 #pragma once
 
-#include <index>
-#include <index_ui>
+#include "../InUI/Include.h"
 #include <lib.horion.h>

@@ -1,8 +1,7 @@
-//
-// Created by lukax on 08.09.2021.
-//
+#pragma once
 
-#ifndef SKID_INCLUDE_H
-#define SKID_INCLUDE_H
+#include "../Utils.h"
 
-#endif //SKID_INCLUDE_H
+#include "FillRect/FillRect.cc"
+#include "OutRect/OutRect.cc"
+#include "Text/Text.cc"

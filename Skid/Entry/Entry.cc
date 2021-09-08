@@ -1,6 +1,8 @@
 #include <index>
 #include <lib.horion.h>
 
+#include "../Client/Starter.cc"
+
 SlimUtils::SlimMem mem;
 const SlimUtils::SlimModule* gameModule;
 static bool isRunning = true;
@@ -108,6 +110,9 @@ DWORD WINAPI Start(LPVOID lpParam)
 	ClickGui::init();
 
 	logF("Hooks enabled");
+
+	// Start Our Stuff
+	Skid::Start();
 
 	std::thread countThread([] {
 		while (isRunning) {

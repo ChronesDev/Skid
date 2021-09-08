@@ -8,6 +8,6 @@ set(CMAKE_GENERATOR_PLATFORM x64)
 add_compile_definitions(WIN32_LEAN_AND_MEAN)
 add_compile_definitions(NOMINMAX)
 
-add_library(Skid SHARED Skid/Entry/Entry.cc)
+add_library(Skid SHARED Skid/Entry/Entry.cc "Skid/Client/Module/AllModules.h")
 
 add_subdirectory(Skid)

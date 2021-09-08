@@ -1,3 +1,4 @@
+add_subdirectory(Controls)
 add_subdirectory(Renderer)
 add_subdirectory(Utils)
 

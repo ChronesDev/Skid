@@ -6,8 +6,6 @@
 
 namespace Skid::InUI
 {
-	using namespace Index;
-
 	struct HorionRenderer : UI::UIContext
 	{
 	private:
