@@ -13,8 +13,19 @@ namespace Skid
 
 	global fun Start()
 	{
-		Modules.Init(Null);
-		Modules.AddDefaultModules();
+		moduleMgr->getModuleList()->push_back(INew<Module::SdAutoArmor>().DynamicAs<IModule>());
+
+		Sleep(10);
+
+		cmdMgr->initCommands();
+		moduleMgr->initModules();
+		configMgr->init();
+
+		Sleep(10);
+
+		Hooks::Enable();
+		TabGui::init();
+		ClickGui::init();
 	}
 }
 

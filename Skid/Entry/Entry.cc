@@ -96,21 +96,6 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 	Sleep(10);
 
-	cmdMgr->initCommands();
-	logF("Initialized command manager (1/3)");
-	moduleMgr->initModules();
-	logF("Initialized module manager (2/3)");
-	configMgr->init();
-	logF("Initialized config manager (3/3)");
-
-	Sleep(10);
-
-	Hooks::Enable();
-	TabGui::init();
-	ClickGui::init();
-
-	logF("Hooks enabled");
-
 	// Start Our Stuff
 	Skid::Start();
 

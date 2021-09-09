@@ -26,8 +26,7 @@ namespace Skid
 			if (!Manager_) throw std::exception(".");
 
 			var lock = Manager_->lockModuleList();
-			var list = *Manager_->getModuleList();
-			list.push_back(m);
+			Manager_->getModuleList()->push_back(m);
 		}
 
 		fun AddDefaultModules()
@@ -35,6 +34,7 @@ namespace Skid
 			if (!Manager_) throw std::exception(".");
 
 			ForceAddModule(INew<Module::UITestModule>().As<IModule>());
+			ForceAddModule(INew<Module::SdAutoArmor>().As<IModule>());
 		}
 	}
 	Modules;
